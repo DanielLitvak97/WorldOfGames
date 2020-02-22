@@ -23,7 +23,7 @@ pipeline{
         }
         stage('Finalize'){
             steps{
-                docker-compose down
+                bat "docker-compose down"
             } 
         }   
     }   
