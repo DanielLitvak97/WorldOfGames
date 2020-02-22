@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('aa'){
             steps{
-                bat "git 'https://github.com/DanielLitvak97/WorldOfGames.git'"
+                bat "git clone https://github.com/DanielLitvak97/WorldOfGames.git"
             }
             steps{
                 dir('WorldOfGames')
