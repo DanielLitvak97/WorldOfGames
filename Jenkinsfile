@@ -1,10 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage('aa'){
+        stage('Checkout'){
             steps{
                 bat "git clone https://github.com/DanielLitvak97/WorldOfGames.git"
-                dir('WorldOfGames')
             }
         }
         stage('Build'){
