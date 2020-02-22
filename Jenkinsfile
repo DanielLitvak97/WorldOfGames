@@ -1,26 +1,26 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('a') { 
-            steps {
+    stages{
+        stage('a'){ 
+            steps{
                 bat "git 'https://github.com/DanielLitvak97/WorldOfGames.git'"
             }
-            steps {
+            steps{
                 dir('WorldOfGames')
             }
         }
-        stage('Build') {
-           steps {
+        stage('Build'){
+           steps{
                 bat "docker-compose build"
            }  
         }
         stage('Run'){
-            steps {
+            steps{
                 bat 'docker-compose up'
             }
         }
-        stage('Test') {
-            steps {
+        stage('Test'){
+            steps{
                 bat "python -c 'import e2e; print e2e.main_function()'"
             }
         } 
