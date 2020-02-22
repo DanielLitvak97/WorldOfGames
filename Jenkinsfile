@@ -4,8 +4,6 @@ pipeline{
         stage('aa'){
             steps{
                 bat "git clone https://github.com/DanielLitvak97/WorldOfGames.git"
-            }
-            steps{
                 dir('WorldOfGames')
             }
         }
