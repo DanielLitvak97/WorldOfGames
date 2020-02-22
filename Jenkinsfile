@@ -10,9 +10,9 @@ pipeline{
             }
         }
         stage('Build'){
-           steps{
+            steps{
                 bat "docker-compose build"
-           }  
+            }  
         }
         stage('Run'){
             steps{
