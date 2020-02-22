@@ -23,7 +23,8 @@ pipeline {
             steps {
                 bat "python -c 'import e2e; print e2e.main_function()'"
             }
-        }    
+        } 
+    }   
 }
 
 
