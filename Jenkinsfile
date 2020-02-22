@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat "cd tests" {
+                dir("tests") {
                     bat 'python -c "import e2e; e2e.main_function()"'
                 }
             }
