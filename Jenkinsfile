@@ -21,12 +21,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                
+                bat "python -c 'import e2e; print e2e.main_function()'"
+            }
+        }    
 }
 
 
-
-dir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\1212121') {
-                    bat 'selenium_test.py'
-    
-     
