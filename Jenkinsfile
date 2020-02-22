@@ -18,7 +18,7 @@ pipeline{
         }
         stage('Test'){
             steps{
-                bat "python -c 'import e2e; print e2e.main_function()'"
+                bat "python e2e.py main_function"
             }
         }
         stage('Finalize'){
