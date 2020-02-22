@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('a'){ 
+        stage('aa'){
             steps{
                 bat "git 'https://github.com/DanielLitvak97/WorldOfGames.git'"
             }
