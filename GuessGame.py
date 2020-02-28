@@ -18,6 +18,7 @@ def compare_results(secret_number, guess):
 def play(difficulty):
     if compare_results(generate_number(difficulty), get_guess_from_user(difficulty)):
         print(True)
+        return True
     else:
         print(False)
     
