@@ -1,7 +1,6 @@
 from flask import Flask
 from pymysql import connect
-#from time import sleep
-#sleep(120)
+
 app = Flask(__name__)
 @app.route('/')
 def score_server():
