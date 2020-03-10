@@ -1,0 +1,4 @@
+currency_converter
+selenium
+flask
+pymysql
