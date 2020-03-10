@@ -1,5 +1,8 @@
 FROM python:3
-COPY MainScores.py /
-COPY Scores.txt /
+
 RUN pip install flask
+RUN pip install PyMySQL
+
+COPY MainScores.py /
+
 CMD ["python", "MainScores.py"]

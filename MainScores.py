@@ -1,12 +1,17 @@
 from flask import Flask
-
+from pymysql import connect
+#from time import sleep
+#sleep(120)
 app = Flask(__name__)
 @app.route('/')
 def score_server():
     try:
-        file = open("Scores.txt", "r")
-        score = file.readline()
-        file.close()
+        conn = connect(host='db', port=3306, user='root', passwd='Password123', db='games', autocommit=True)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users_scores")
+        record = cursor.fetchone()
+        score = int(record[0])
+
         return """<html>
                        <head>
                          <title>Scores Game</title>
@@ -16,7 +21,7 @@ def score_server():
                        </body>
                  </html>""" % score
 
-    except IOError:
+    except:
         return """<html>
                        <head>
                          <title>Scores Game</title>
