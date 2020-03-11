@@ -1,6 +1,7 @@
 # WorldOfGames
 
 ----Python----
+
 I created several games using python scripts.
 
 The games:
@@ -17,6 +18,7 @@ In this project, in all option questions, such as choosing a game number or a di
 
 
 ----MySQL (DB) & Docker----
+
 Whenever the user wins a game, the score he gets, will be stored into a container of MySQL DB using the "Scores.py" script.
 Which is at the same time, there is a flask python script running (MainScores.py) that queries the DB above for the current score.
 Then displays it in its web application, which can be accessed by "http://localhost:8777".
@@ -40,9 +42,11 @@ It builds the Dockerfiles, names the new images, gives a password to the contain
 
 
 ----Jenkins----
+
 The "Jenkinsfile" has a Declarative Pipeline script, that does the following:
 
 1. Cloning the "WorldOfGames" repository into a host.
 2. Builds the "docker-compose.yml".
 3. Runs the "docker-compose.yml".
-
+4. Tests (using Selenium in the script of "tests/e2e.py") the web application that the score there is within the score range specified in the script.
+5. Stops and removes the containers, then pushes the built images to Dokcer-Hub.
