@@ -20,7 +20,7 @@ In this project, in all option questions, such as choosing a game number or a di
 ----MySQL (DB) & Docker----
 
 Whenever the user wins a game, the score he gets, will be stored into a container of MySQL DB using the "Scores.py" script.
-Which is at the same time, there is a flask python script running (MainScores.py) that queries the DB above for the current score.
+Which is at the same time, in another container there is a flask python script running (MainScores.py) that queries the DB above for the current score.
 Then displays it in its web application, which can be accessed by "http://localhost:8777".
 
 
