@@ -12,7 +12,7 @@ The games:
 In order to play the games, the script of "MainGame.py" should be started.
 This script will ask for user's name and his game choice, afterwards he will be asked for a game difficulty level as well.
 
-In this project, in all option questions, such as choosing a game number or a difficulty level (also a number), the project will not accept any other type besided an integer - thanks to "InputNumbersOnly.py".
+In this project, in all option questions, such as choosing a game number or a difficulty level (also a number), the project will not accept any other type besides an integer - thanks to "InputNumbersOnly.py".
 
 
 
