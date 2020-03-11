@@ -28,8 +28,8 @@ The following were done in order to accomplish that:
 
 I created 2 Dockerfiles:
 
-1. Dockerfile_db - this file creates an image of "mysql" and also starts a script of "create_db_and_table.sql".
-This script create a DB and a table.
+1. Dockerfile_db - this file creates an image of "mysql" and also runs a script of "create_db_and_table.sql".
+This script creates a DB and a table.
 
 2. Dockerfile_app - this file creates an image of "python" and runs a script named "MainScores.py".
 As described above, this script create a web application using flask, and also queries the DB for the current score to display (using HTML) in the web.
@@ -48,5 +48,5 @@ The "Jenkinsfile" has a Declarative Pipeline script, that does the following:
 1. Cloning the "WorldOfGames" repository into a host.
 2. Builds the "docker-compose.yml".
 3. Runs the "docker-compose.yml".
-4. Tests (using Selenium in the script of "tests/e2e.py") the web application that the score there is within the score range specified in the script.
+4. Tests (using Selenium in the script of "/tests/e2e.py") the web application that the score there is within the score range specified in the script.
 5. Stops and removes the containers, then pushes the built images to Dokcer-Hub.
