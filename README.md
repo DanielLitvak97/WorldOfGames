@@ -35,7 +35,7 @@ This script create a DB and a table.
 As described above, this script create a web application using flask, and also queries the DB for the current score to display (using HTML) in the web.
 
 
-In order to build, start and run Dockerfiles, I created a docker-compose - "docker-compose.yml".
+In order to build the Dockerfiles and run the relevant containers with their images, I created a docker-compose - "docker-compose.yml".
 It builds the Dockerfiles, names the new images, gives a password to the container of DB and exposes both the new containers.
 
 
