@@ -14,9 +14,9 @@ In this project, in all option questions, such as choosing a game number or a di
 
 ----Python - Files I/O----
 
-Whenever the user wins a game, the score he gets, will be stored into a "Scores.txt" file using "Scores.py" script. Which is at the same time, there is a flask python script running (MainScores.py) that queries the DB above for the current score. Then displays it in its web application, which can be accessed by "http://localhost:8777".
+Whenever the user wins a game, the score he gets, will be stored into a "Scores.txt" file using "Scores.py" script. Which is at the same time, there is a flask python script running (MainScores.py) inside a container, that has this file mounted from the host to its root directoty. Then the flask displays it in its web application, which can be accessed by "http://localhost:8777".
 
-THe following were done in order to acomplish that:
+The following were done in order to accomplish that:
 
 I created 2 Dockerfiles:
 
