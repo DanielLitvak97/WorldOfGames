@@ -17,6 +17,23 @@ In this project, in all option questions, such as choosing a game number or a di
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ----MySQL (DB) & Docker----
 
 Whenever the user wins a game, the score he gets, will be stored into a container of MySQL DB using the "Scores.py" script.
