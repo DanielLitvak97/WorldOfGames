@@ -24,7 +24,7 @@ Which is at the same time, in another container there is a flask python script r
 Then displays it in its web application, which can be accessed by "http://localhost:8777".
 
 
-The following were done in order to acomplish that:
+The following were done in order to accomplish that:
 
 I created 2 Dockerfiles:
 
