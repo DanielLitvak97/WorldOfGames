@@ -13,19 +13,15 @@ In order to play the games, the script of "MainGame.py" should be started. This 
 
 In this project, in all option questions, such as choosing a game number or a difficulty level (also a number), the project will not accept any other type besided an integer - thanks to "InputNumbersOnly.py".
 
-----Python - Files I/O------
+----Python - Files I/O & Docker------
 
-Whenever the user wins a game, the score he gets, will be stored into a "Scores.txt" file using "Scores.py" script. Which is at the same time, there is a flask python script running (MainScores.py) inside a container, that has this file mounted from the host to its root directoty. Then the flask displays it in its web application, which can be accessed by "http://localhost:8777".
+Whenever the user wins a game, the score he gets, will be stored into a "Scores.txt" file using "Scores.py" script. Which is at the same time, there is a flask python script running (MainScores.py) inside a container, that has this file mounted from the host to the container's root directoty. Then the flask displays it in its web application, which can be accessed by "http://localhost:8777".
 
 The following were done in order to accomplish that:
 
-I created 2 Dockerfiles:
+1. Dockerfile - this file creates an image of "python" and runs a script named "MainScores.py". As described above, this script create a web application using flask.
 
-1. Dockerfile_db - this file creates an image of "mysql" and also starts a script of "create_db_and_table.sql". This script create a DB and a table.
-
-2. Dockerfile_app - this file creates an image of "python" and runs a script named "MainScores.py". As described above, this script create a web application using flask, and also queries the DB for the current score to display (using HTML) in the web.
-
-In order to build, start and run Dockerfiles, I created a docker-compose - "docker-compose.yml". It builds the Dockerfiles, names the new images, gives a password to the container of DB and exposes both the new containers.
+2. docker-compose - In order to build the Dockerfile and run the relevant container with its images, I created a docker-compose - "docker-compose.yml". It builds the Dockerfile, names the new image, mounts the "Scores.txt" from the host to the container, and exposes both the new containers.
 
 ----Jenkins----
 
