@@ -1,5 +1,5 @@
 # WorldOfGames
-My DevOps Course Project.
+My DevOps Course Project:
 
 ----Python----
 
