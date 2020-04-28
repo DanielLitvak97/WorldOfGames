@@ -8,27 +8,29 @@ pipeline {
         }
         stage('Build') {
             steps {
-	        dir("./Docker") {
-                    bat "docker-compose build"
-		}
+	        bat """cd WorldOfGames/Docker
+
+                       docker-compose build"""
             }  
         }
         stage('Run') {
             steps {
-                bat "docker-compose up -d"
+                bat """cd WorldOfGames/Docker
+		       docker-compose up -d"""
             }
         }
         stage('Test') {
             steps {
-                dir("./Python/tests") {
-                    bat 'python -c "import e2e; e2e.main_function()"'
-                }
+	        bat """cd WorldOfGames/Docker
+                
+                       'python -c "import e2e; e2e.main_function()"'"""
             }
         }
         stage('Finalize') {
             steps {
-                bat "docker-compose down"
-                bat "docker-compose push"
+	        bat """cd WorldOfGames/Docker
+                       docker-compose down
+                       docker-compose push"""
             } 
         }   
     }   
