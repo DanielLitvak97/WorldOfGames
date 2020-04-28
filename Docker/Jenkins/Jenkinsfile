@@ -9,7 +9,6 @@ pipeline {
         stage('Build') {
             steps {
 	        bat """cd WorldOfGames/Docker
-
                        docker-compose build"""
             }  
         }
@@ -21,9 +20,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-	        bat """cd WorldOfGames/Docker
-                
-                       'python -c "import e2e; e2e.main_function()"'"""
+	        bat """cd WorldOfGames/Docker/Python/tests
+                       python -c "import e2e; e2e.main_function()"""
             }
         }
         stage('Finalize') {
