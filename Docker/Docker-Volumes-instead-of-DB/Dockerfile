@@ -1,12 +1,11 @@
 FROM python:3
 
 RUN pip install flask
-RUN pip install PyMySQL
 
 #Can also do this:
-#COPY requirements.txt /
+#COPY ../../requirements.txt /
 #RUN pip install -r /requirements.txt
 
-COPY MainScores.py /
+COPY ../../Python/MainScores.py /
 
 CMD ["python", "MainScores.py"]

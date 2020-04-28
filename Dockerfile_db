@@ -1,4 +1,0 @@
-FROM mysql
-
-COPY create_db_and_table.sql /docker-entrypoint-initdb.d
-
