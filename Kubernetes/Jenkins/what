@@ -6,20 +6,29 @@ pipeline {
                 bat "git clone https://github.com/DanielLitvak97/WorldOfGames.git"
             }
         }
-        stage('Helm-Install') {
+        stage('Build') {
             steps {
-	        bat "helm install app-and-db WorldOfGames/Kubernetes/Helm/app-and-db"
+	        bat """cd WorldOfGames/Kubernetes
+                       docker-compose build"""
             }  
+        }
+        stage('Run') {
+            steps {
+                bat """cd WorldOfGames/Docker
+		       docker-compose up -d"""
+            }
         }
         stage('Test') {
             steps {
-	        bat """cd WorldOfGames/Kubernetes/Python/tests
+	        bat """cd WorldOfGames/Docker/Python/tests
                        python -c "import e2e; e2e.main_function()"""
             }
         }
         stage('Finalize') {
             steps {
-	        bat "helm delete app-and-db"
+	        bat """cd WorldOfGames/Docker
+                       docker-compose down
+                       docker-compose push"""
             } 
         }   
     }   

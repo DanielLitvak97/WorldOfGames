@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-	        bat """cd WorldOfGames/Docker
-                       docker-compose build"""
+	        bat "docker-compose -f WorldOfGames/Docker build"
             }  
         }
         stage('Run') {

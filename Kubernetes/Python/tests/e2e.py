@@ -11,7 +11,7 @@ def test_scores_service(application_url):
 
 
 def main_function():
-    if test_scores_service("http://localhost:8777"):
+    if test_scores_service("http://192.168.99.100:30001"):
         return 0
     return exit(-1)
 
