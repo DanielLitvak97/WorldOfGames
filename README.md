@@ -57,9 +57,14 @@ The "Jenkinsfile" has a Declarative Pipeline script, that does the following:
 ----Kubernetes & Helm----
 
  This section is an alternative for those who don't want to use Docker.
- The Kubernetes cluster uses the 2 Docker images I created above, it fetches them from "Docker Hub".
+ The Kubernetes Cluster uses the 2 Docker images I created above, it fetches them from "Docker Hub".
  And start and run them all. 
  
 The following were done in order to accomplish that:
 
-1. I created an "app-deployment.yaml"
+1. I created an "app-deployment.yaml" which creates a pod of the App (Flask Script).
+2. I created an "app-service.yaml" which exposes (using NodePort) the app for outside the Kubernetes Cluster.
+3. I created an "db-deployment.yaml" which creates a pod of the DB (MySQL) with a root password and port.
+4. I created an "db-service.yaml" which exposes (using NodePort) the DB for outside the Kubernetes Cluster, and since it's NodePort it      allows us automatically use the Service of ClusterIP, which we need since the App has to query the DB.
+
+Using "Helm" I packed all those files, which allows us now 
