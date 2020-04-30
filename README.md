@@ -67,4 +67,4 @@ The following were done in order to accomplish that:
 3. I created an "db-deployment.yaml" which creates a pod of the DB (MySQL) with a root password and port.
 4. I created an "db-service.yaml" which exposes (using NodePort) the DB for outside the Kubernetes Cluster, and since it's NodePort it      allows us automatically use the Service of ClusterIP, which we need since the App has to query the DB.
 
-Using "Helm" I packed all those files, which allows us now 
+Using "Helm" I packed all those files, created a "values.yaml", which allows the users to deploy those pods with customized Replicas and Services.
