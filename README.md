@@ -3,7 +3,7 @@ My DevOps Course Project:
 
 ----Python----
 
-I created several games using python scripts.
+II created several games using python scripts.
 
 The games:
 1. CurrencyRouletteGame.py
