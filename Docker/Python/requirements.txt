@@ -1,0 +1,5 @@
+selenium
+flask
+pymysql
+currency_converter
+cryptography
